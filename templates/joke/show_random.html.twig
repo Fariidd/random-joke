@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blague Aléatoire Carambar</title>
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+    <section class="joke-container">
+        <img src="/img/carambar-logo.png" alt="Carambar Logo" class="carambar-image">
+        <div class="joke-content" id="joke">Cliquez sur le bouton pour obtenir une blague</div>
+        <div class="joke-answer" id="answer"></div>
+        <button id="jokeButton">Obtenir une nouvelle blague</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Carambar&Co. Tous les droits sont réservés. Réalisé avec amour et bonnes blagues.</p>
+    </footer>
+
+    <script>
+        document.getElementById('jokeButton').addEventListener('click', async () => {
+            try {
+                const response = await fetch('{{ path('api_random_joke') }}');
+                const data = await response.json();
+                if (response.ok) {
+                    document.getElementById('joke').innerText = data.joke;
+                    document.getElementById('answer').innerText = data.answer;
+                } else {
+                    document.getElementById('joke').innerText = 'Erreur : ' + data.error;
+                }
+            } catch (error) {
+                document.getElementById('joke').innerText = 'Erreur de connexion';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Joke{% endblock %}
+
+{% block body %}
+    <h1>Modifier la blague</h1>
+
+    {{ include('joke/_form.html.twig', {'button_label': 'Valider la modification'}) }}
+
+    {{ include('joke/_delete_form.html.twig') }}
+
+    <a href="{{ path('app_joke_index') }}">Retourner à la liste des blagues</a>
+
+    
+{% endblock %}

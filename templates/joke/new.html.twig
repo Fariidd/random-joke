@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Joke{% endblock %}
+
+{% block body %}
+    <h1>Ajouter une blague</h1>
+
+    {{ include('joke/_form.html.twig') }}
+
+    <a href="{{ path('app_joke_index') }}">Retourner à la liste des blagues</a>
+{% endblock %}

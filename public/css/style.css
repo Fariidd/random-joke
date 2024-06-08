@@ -1,0 +1,79 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #fff200; /* Jaune Carambar */
+    background-image: url('/img/carambar-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+
+.joke-container {
+    max-width: 600px;
+    margin: auto;
+    margin-top: 80px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ff5733;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border: 5px solid #000000;
+    position: relative;
+}
+
+.joke-content {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.joke-answer {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #f1c40f; 
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    background-color: #f1c40f;
+    color: #000000;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px #d4ac0d;
+}
+
+button:hover {
+    background-color: #ffdb58;
+}
+
+.carambar-image {
+    width: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+
+
+footer {
+    background-color: #ff5733; /* Rouge Carambar */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+footer p {
+    margin: 0; /* Supprime les marges par défaut */
+    font-size: 14px;
+    line-height: 1.5;
+}
+
