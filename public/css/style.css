@@ -61,19 +61,13 @@ button:hover {
     z-index: 1;
 }
 
-
-
 footer {
     background-color: #ff5733; /* Rouge Carambar */
     color: white;
-    text-align: center;
     padding: 20px;
-    box-sizing: border-box;
 }
 
-footer p {
-    margin: 0; /* Supprime les marges par défaut */
-    font-size: 14px;
-    line-height: 1.5;
-}
+
+
+
 

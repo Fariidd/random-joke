@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blague Aléatoire Carambar</title>
-    <link href="/css/style.css" rel="stylesheet">
-</head>
-<body>
+{% extends 'base.html.twig' %}
+{% block body %}
 
     <section class="joke-container">
         <img src="/img/carambar-logo.png" alt="Carambar Logo" class="carambar-image">
@@ -15,25 +8,33 @@
         <button id="jokeButton">Obtenir une nouvelle blague</button>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Carambar&Co. Tous les droits sont réservés. Réalisé avec amour et bonnes blagues.</p>
-    </footer>
-
+    
+    {% block javascripts %}
     <script>
+        // Vise le bouton d'ID 'jokeButton' et ajoute un écouteur d'événement géré de façon asynchrone pour les clics
         document.getElementById('jokeButton').addEventListener('click', async () => {
             try {
+                // Envoie une requête pour obtenir une blague aléatoire
                 const response = await fetch('{{ path('api_random_joke') }}');
+            
+                // Stocke la réponse du serveur et la convertit en JSON
                 const data = await response.json();
+            
+                // Vérifie si la réponse est réussie
                 if (response.ok) {
+                    // Si tout est ok, change le contenu des balises d'id 'joke' et 'answer' par leur contenu respectif
                     document.getElementById('joke').innerText = data.joke;
                     document.getElementById('answer').innerText = data.answer;
                 } else {
+                    // Si la réponse a échoué, affiche le message d'erreur
                     document.getElementById('joke').innerText = 'Erreur : ' + data.error;
                 }
             } catch (error) {
+                // Si une erreur de connexion se produit, affiche un message d'erreur de connexion
                 document.getElementById('joke').innerText = 'Erreur de connexion';
             }
         });
     </script>
-</body>
-</html>
+    {% endblock %}
+{% endblock %}
+
