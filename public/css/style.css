@@ -11,8 +11,8 @@ body {
     height: 100vh; 
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
 }
+
 
 
 .joke-container {
@@ -61,11 +61,6 @@ button:hover {
     z-index: 1;
 }
 
-footer {
-    background-color: #ff5733; /* Rouge Carambar */
-    color: white;
-    padding: 20px;
-}
 
 
 
